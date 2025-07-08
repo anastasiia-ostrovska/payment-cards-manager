@@ -5,7 +5,7 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import type { DropdownActionsHandlers } from "../common/types";
+import type { DropdownActionsHandlers } from "@/common/types";
 import { OpenActionsMenuButton } from "./OpenActionsMenuButton";
 
 interface DropdownActionsMenuProps extends DropdownActionsHandlers {

@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import type { CardsTableActionHandler, PaymentCard } from "../common/types";
+import type {
+	AddCardHandler,
+	CardsTableActionHandler,
+	PaymentCard,
+} from "@/common/types";
 import { paymentCardsData } from "../common/configs";
 
 export const useCards = () => {
@@ -33,10 +37,21 @@ export const useCards = () => {
 		);
 	};
 
+	const handleAddCard: AddCardHandler = ({ brand, last4 }) => {
+		const newCard: PaymentCard = {
+			id: crypto.randomUUID(),
+			brand,
+			last4,
+			isDefault: false,
+		};
+		setCards((previous) => [...previous, newCard]);
+	};
+
 	return {
 		cards,
 		isLoading,
 		handleDeleteCard,
 		handleSetDefaultCard,
+		handleAddCard,
 	};
 };
