@@ -1,6 +1,7 @@
 import { createRouter } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Loading } from "@/pages/Loading";
 import App from "./App.tsx";
 import { routeTree } from "./routeTree.gen.ts";
 import "./styles/tailwind.css";
@@ -22,7 +23,7 @@ if (!rootElement.innerHTML) {
 	const root = ReactDOM.createRoot(rootElement);
 	root.render(
 		<React.StrictMode>
-			<React.Suspense fallback="loading">
+			<React.Suspense fallback={<Loading />}>
 				<App router={router} />
 			</React.Suspense>
 		</React.StrictMode>
