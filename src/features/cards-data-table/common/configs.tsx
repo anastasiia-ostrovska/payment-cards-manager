@@ -1,16 +1,17 @@
 import type { ColumnDef } from "@tanstack/react-table";
-import type { Brand, PaymentBrands, PaymentCard } from "./types";
+import type { Brand, PaymentBrands, PaymentCard } from "@/common/types";
+import VisaImg from "@/assets/images/png/visa.png";
+import MastercardImg from "@/assets/images/png/mastercard.png";
+import AmexImg from "@/assets/images/png/amex.png";
 import { BrandImage } from "../components/BrandImage";
 import { DefaultCardCell } from "../components/DefaultCardCell";
 import { DropdownActionsMenu } from "../components/DropdownActionsMenu";
 
 // Brand images
 export const paymentBrandImages: PaymentBrands = {
-	visa: <BrandImage alt="Visa" src="/src/assets/images/png/visa.png" />,
-	mastercard: (
-		<BrandImage alt="Mastercard" src="/src/assets/images/png/mastercard.png" />
-	),
-	amex: <BrandImage alt="Amex" src="/src/assets/images/png/amex.png" />,
+	visa: <BrandImage alt="Visa" src={VisaImg} />,
+	mastercard: <BrandImage alt="Mastercard" src={MastercardImg} />,
+	amex: <BrandImage alt="Amex" src={AmexImg} />,
 };
 
 // Cards mock data

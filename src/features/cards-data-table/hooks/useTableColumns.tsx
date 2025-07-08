@@ -2,11 +2,11 @@ import type {
 	Brand,
 	DropdownActionsHandlers,
 	PaymentCard,
-} from "../common/types";
+} from "@/common/types";
 import type { ColumnDef } from "@tanstack/react-table";
-import { DefaultCardCell } from "@/features/cards-data-table/components/DefaultCardCell";
-import { DropdownActionsMenu } from "@/features/cards-data-table/components/DropdownActionsMenu";
-import { paymentBrandImages } from "@/features/cards-data-table/common/configs";
+import { paymentBrandImages } from "../common/configs";
+import { DefaultCardCell } from "../components/DefaultCardCell";
+import { DropdownActionsMenu } from "../components/DropdownActionsMenu";
 
 export const useTableColumns = ({
 	onDeleteClick,
