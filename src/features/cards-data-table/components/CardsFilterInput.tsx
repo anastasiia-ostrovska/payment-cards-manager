@@ -6,6 +6,7 @@ export const CardsFilterInput = <TData,>({ table }: CardsTable<TData>) => {
 		<Input
 			className="max-w-sm"
 			placeholder="Filter last 4 numbers..."
+			type="number"
 			value={(table.getColumn("last4")?.getFilterValue() as string) ?? ""}
 			onChange={(event) =>
 				table.getColumn("last4")?.setFilterValue(event.target.value)
