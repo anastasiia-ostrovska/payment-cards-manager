@@ -5,13 +5,11 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import type { CardsTableActionHandler } from "../common/types";
+import type { DropdownActionsHandlers } from "../common/types";
 import { OpenActionsMenuButton } from "./OpenActionsMenuButton";
 
-interface DropdownActionsMenuProps {
+interface DropdownActionsMenuProps extends DropdownActionsHandlers {
 	id: string;
-	onDeleteClick: CardsTableActionHandler;
-	onSetDefaultClick: CardsTableActionHandler;
 }
 
 export const DropdownActionsMenu = ({
