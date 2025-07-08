@@ -2,6 +2,7 @@ import type { CardsDataTable as CardsDataTableProps } from "../common/types";
 import { Table } from "@/components/ui/table";
 import { CardsTableHeader } from "./CardsTableHeader";
 import { CardsTableBody } from "./CardsTableBody";
+import { CardsFilterInput } from "./CardsFilterInput";
 import { useCardsDataTable } from "../hooks/useCardsDataTable";
 
 export const CardsDataTable = <TData, TValue>({
@@ -16,15 +17,21 @@ export const CardsDataTable = <TData, TValue>({
 	});
 
 	return (
-		<div className="w-full max-w-lg rounded-md border">
-			<Table>
-				<CardsTableHeader table={table} />
-				<CardsTableBody
-					columnsLength={columns.length}
-					message={message}
-					table={table}
-				/>
-			</Table>
+		<div className="flex flex-col w-full max-w-lg gap-4">
+			<div className="flex w-full justify-between items-center gap-8">
+				<p className="font-bold text-nowrap">My Cards</p>
+				<CardsFilterInput table={table} />
+			</div>
+			<div className="rounded-md border">
+				<Table>
+					<CardsTableHeader table={table} />
+					<CardsTableBody
+						columnsLength={columns.length}
+						message={message}
+						table={table}
+					/>
+				</Table>
+			</div>
 		</div>
 	);
 };
