@@ -1,17 +1,21 @@
 {
-  "name": "vite-react-boilerplate",
-  "author": "Ricardo Valdovinos <ricardovaldovinos1996@gmail.com>",
-  "description": "A production ready, batteries included starter template for Vite + React projects",
+  "name": "payment-cards-manager",
+  "author": "Anastasiia Ostrovska <anastasiia.ostrovska99@gmail.com>",
+  "description": "A card management interface with support for adding, deleting, sorting, filtering and setting default payment cards.",
   "keywords": [
     "vite",
     "react",
     "boilerplate",
     "starter",
-    "template"
+    "template",
+    "payment",
+    "cards",
+    "cards manager",
+    "payment manager"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/RicardoValdovinos/vite-react-boilerplate"
+    "url": "https://github.com/anastasiia-ostrovska/payment-cards-manager"
   },
   "license": "MIT",
   "version": "1.0.0",
