@@ -30,7 +30,7 @@ export const OpenDialogButton = ({
 			</DialogTrigger>
 			<DialogContent aria-describedby={undefined} className="sm:max-w-[425px]">
 				<DialogHeader>
-					<DialogTitle>{title}</DialogTitle>
+					<DialogTitle className="text-xl text-start">{title}</DialogTitle>
 				</DialogHeader>
 				{createCardForm}
 				<DialogFooter>

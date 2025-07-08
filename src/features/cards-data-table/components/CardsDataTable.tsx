@@ -19,7 +19,7 @@ export const CardsDataTable = <TData, TValue>({
 	return (
 		<div className="flex flex-col w-full gap-4">
 			<div className="flex w-full justify-between items-center gap-8">
-				<p className="font-bold text-nowrap">My Cards</p>
+				<h2 className="font-bold text-nowrap text-xl">My Cards</h2>
 				<CardsFilterInput table={table} />
 			</div>
 			<div className="rounded-md border">
