@@ -8,7 +8,7 @@ import { DefaultCardCell } from "@/features/cards-data-table/components/DefaultC
 import { DropdownActionsMenu } from "@/features/cards-data-table/components/DropdownActionsMenu";
 import { paymentBrandImages } from "@/features/cards-data-table/common/configs";
 
-export const useCardsTableColumns = ({
+export const useTableColumns = ({
 	onDeleteClick,
 	onSetDefaultClick,
 }: DropdownActionsHandlers): Array<ColumnDef<PaymentCard>> => {

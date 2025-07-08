@@ -1,10 +1,9 @@
-import type { Table as TableInstance } from "@tanstack/react-table";
 import { TableBody } from "@/components/ui/table";
 import { CardsTableRow } from "./CardsTableRow";
 import { TableMessage } from "./TableMessage";
+import type { CardsTable } from "../common/types";
 
-interface CardsTableBodyProps<TData> {
-	table: TableInstance<TData>;
+interface CardsTableBodyProps<TData> extends CardsTable<TData> {
 	message: string;
 	columnsLength: number;
 }

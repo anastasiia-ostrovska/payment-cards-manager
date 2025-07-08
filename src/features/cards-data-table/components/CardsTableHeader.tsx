@@ -1,13 +1,8 @@
-import { type Table as TableInstance, flexRender } from "@tanstack/react-table";
+import { flexRender } from "@tanstack/react-table";
 import { TableHead, TableHeader, TableRow } from "@/components/ui/table.tsx";
+import type { CardsTable } from "../common/types";
 
-type CardsTableHeaderProps<TData> = {
-	table: TableInstance<TData>;
-};
-
-export function CardsTableHeader<TData>({
-	table,
-}: CardsTableHeaderProps<TData>) {
+export function CardsTableHeader<TData>({ table }: CardsTable<TData>) {
 	return (
 		<TableHeader>
 			{table.getHeaderGroups().map((headerGroup) => (
