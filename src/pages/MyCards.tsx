@@ -12,7 +12,7 @@ export const MyCards = () => {
 		<main
 			className={`
 		flex flex-col items-center justify-center justify-self-center 
-		h-dvh w-full max-w-lg 
+		h-full min-h-[100dvh] w-full max-w-lg 
 		gap-4 p-4`}
 		>
 			<CardsDataTable columns={columns} data={data} isLoading={isLoading} />

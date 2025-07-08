@@ -2,7 +2,9 @@ import { useState } from "react";
 import {
 	type Table as TableInstance,
 	type ColumnFiltersState,
+	type SortingState,
 	getCoreRowModel,
+	getSortedRowModel,
 	useReactTable,
 	getFilteredRowModel,
 } from "@tanstack/react-table";
@@ -20,6 +22,7 @@ export const useTable = <TData, TValue>({
 	isLoading = false,
 }: CardsDataTable<TData, TValue>): UseCardsTableReturn<TData> => {
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+	const [sorting, setSorting] = useState<SortingState>([]);
 
 	const table = useReactTable({
 		data,
@@ -27,7 +30,9 @@ export const useTable = <TData, TValue>({
 		getCoreRowModel: getCoreRowModel(),
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
-		state: { columnFilters },
+		onSortingChange: setSorting,
+		getSortedRowModel: getSortedRowModel(),
+		state: { sorting, columnFilters },
 	});
 
 	const hasRows = !!table.getRowModel().rows?.length;

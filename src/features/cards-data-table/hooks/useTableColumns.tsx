@@ -4,9 +4,11 @@ import type {
 	PaymentCard,
 } from "@/common/types";
 import type { ColumnDef } from "@tanstack/react-table";
-import { paymentBrandImages } from "../common/configs";
+import { ArrowUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { DefaultCardCell } from "../components/DefaultCardCell";
 import { DropdownActionsMenu } from "../components/DropdownActionsMenu";
+import { paymentBrandImages } from "../common/configs";
 
 export const useTableColumns = ({
 	onDeleteClick,
@@ -15,7 +17,19 @@ export const useTableColumns = ({
 	return [
 		{
 			accessorKey: "brand",
-			header: "Brand",
+			header: ({ column }) => {
+				return (
+					<Button
+						variant="ghost"
+						onClick={() => {
+							column.toggleSorting(column.getIsSorted() === "asc");
+						}}
+					>
+						Brand
+						<ArrowUpDown />
+					</Button>
+				);
+			},
 			cell: ({ row }) => {
 				const brand: Brand = row.getValue("brand");
 				return paymentBrandImages[brand];
