@@ -4,6 +4,7 @@ import {
 	CreateCardForm,
 	CreateCardSubmitButton,
 } from "@/features/create-card-form";
+import { ModeToggler } from "@/features/mode-moggler";
 
 export const MyCards = () => {
 	const { columns, data, isLoading, handleAddCard } = useCardsTableData();
@@ -15,6 +16,7 @@ export const MyCards = () => {
 		h-full min-h-[100dvh] w-full max-w-lg 
 		gap-4 p-4`}
 		>
+			<ModeToggler />
 			<CardsDataTable columns={columns} data={data} isLoading={isLoading} />
 			<OpenDialogButton
 				createCardForm={<CreateCardForm addCard={handleAddCard} />}
