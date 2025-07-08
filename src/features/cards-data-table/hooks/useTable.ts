@@ -9,16 +9,16 @@ import {
 import type { CardsDataTable } from "../common/types";
 import { getTableMessage } from "../common/utils";
 
-interface UseCardsDataTableReturn<TData> {
+interface UseCardsTableReturn<TData> {
 	table: TableInstance<TData>;
 	message: string;
 }
 
-export const useCardsDataTable = <TData, TValue>({
+export const useTable = <TData, TValue>({
 	data,
 	columns,
 	isLoading = false,
-}: CardsDataTable<TData, TValue>): UseCardsDataTableReturn<TData> => {
+}: CardsDataTable<TData, TValue>): UseCardsTableReturn<TData> => {
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
 	const table = useReactTable({

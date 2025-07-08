@@ -3,14 +3,14 @@ import { Table } from "@/components/ui/table";
 import { CardsTableHeader } from "./CardsTableHeader";
 import { CardsTableBody } from "./CardsTableBody";
 import { CardsFilterInput } from "./CardsFilterInput";
-import { useCardsDataTable } from "../hooks/useCardsDataTable";
+import { useTable } from "../hooks/useTable";
 
 export const CardsDataTable = <TData, TValue>({
 	columns,
 	data,
 	isLoading = false,
 }: CardsDataTableProps<TData, TValue>) => {
-	const { table, message } = useCardsDataTable({
+	const { table, message } = useTable({
 		data,
 		columns,
 		isLoading,
