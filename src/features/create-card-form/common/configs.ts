@@ -7,14 +7,14 @@ import type { BrandOptions, CreateCardInputs } from "../common/types";
 export const regexPatterns = {
 	cardNumber: /^\d{16}$/,
 	date: /^(0[1-9]|1[0-2])\/\d{2}$/,
-	cvc: /^\d{3}$/,
+	cvc: /^\d{4}$/,
 };
 
 export const errorMessages = {
 	brand: "Please select a card brand",
 	cardNumber: "Card number must be 16 digits",
 	date: "Date must be in MM/YY format",
-	cvc: "CVC must be 3 digits",
+	cvc: "CVC must be 4 digits",
 };
 
 // Select Brand Options
@@ -47,6 +47,6 @@ export const createCardInputs: CreateCardInputs = {
 		label: "CVC",
 		name: "cvc",
 		type: "password",
-		placeholder: "123",
+		placeholder: "1234",
 	},
 };
