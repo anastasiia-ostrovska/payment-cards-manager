@@ -1,4 +1,5 @@
 import { useFormContext } from "react-hook-form";
+import { withMask } from "use-mask-input";
 import {
 	FormControl,
 	FormField,
@@ -13,7 +14,7 @@ export const FormControlledInput = ({
 	label,
 	name,
 	placeholder,
-	type,
+	mask = "",
 }: CreateCardInput) => {
 	const { control } = useFormContext<CreateCardFormValues>();
 
@@ -24,8 +25,8 @@ export const FormControlledInput = ({
 			render={({ field }) => (
 				<FormItem>
 					<FormLabel>{label}</FormLabel>
-					<FormControl>
-						<Input placeholder={placeholder} type={type} {...field} />
+					<FormControl {...(mask ? { ref: withMask(mask) } : {})}>
+						<Input placeholder={placeholder} {...field} />
 					</FormControl>
 					<FormMessage />
 				</FormItem>

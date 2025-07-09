@@ -5,7 +5,7 @@ import type { BrandOptions, CreateCardInputs } from "../common/types";
 
 // Form Schema Configs
 export const regexPatterns = {
-	cardNumber: /^\d{16}$/,
+	cardNumber: /^\d{4} \d{4} \d{4} \d{4}$/,
 	date: /^(0[1-9]|1[0-2])\/\d{2}$/,
 	cvc: /^\d{4}$/,
 };
@@ -34,19 +34,19 @@ export const createCardInputs: CreateCardInputs = {
 	number: {
 		label: "Card number",
 		name: "number",
-		type: "number",
 		placeholder: "0000 0000 0000 0000",
+		mask: "9999 9999 9999 9999",
 	},
 	date: {
 		label: "Expiration date",
 		name: "date",
-		type: "text",
 		placeholder: "MM/YY",
+		mask: "99/99",
 	},
 	cvc: {
 		label: "CVC",
 		name: "cvc",
-		type: "password",
-		placeholder: "1234",
+		placeholder: "****",
+		mask: "9999",
 	},
 };

@@ -66,6 +66,7 @@
     "react-hook-form": "^7.57.0",
     "react-i18next": "^15.5.2",
     "tailwind-merge": "^3.3.1",
+    "use-mask-input": "^3.4.2",
     "zod": "^3.25.51",
     "zustand": "^5.0.5"
   },

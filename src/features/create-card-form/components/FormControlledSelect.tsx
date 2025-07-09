@@ -13,10 +13,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { brandOptions } from "../common/configs";
-import type {
-	CreateCardFormValues,
-	CreateCardInputFieldName,
-} from "../common/types";
+import type { CreateCardFormValues, CreateCardInput } from "../common/types";
 import { BrandSelectItem } from "./BrandSelectItem";
 
 export const FormControlledSelect = ({
@@ -29,22 +26,19 @@ export const FormControlledSelect = ({
 	return (
 		<FormField
 			control={control}
-			name={name as CreateCardInputFieldName}
+			name={name}
 			render={({ field }) => (
 				<FormItem>
 					<FormLabel>{label}</FormLabel>
-					<Select
-						value={field.value as CreateCardFormValues}
-						onValueChange={field.onChange}
-					>
+					<Select value={field.value} onValueChange={field.onChange}>
 						<FormControl>
 							<SelectTrigger>
-								<SelectValue placeholder={placeholder as string} />
+								<SelectValue placeholder={placeholder} />
 							</SelectTrigger>
 						</FormControl>
 						<SelectContent>
 							{brandOptions.map((option) => (
-								<BrandSelectItem {...option} />
+								<BrandSelectItem key={option.label} {...option} />
 							))}
 						</SelectContent>
 					</Select>
