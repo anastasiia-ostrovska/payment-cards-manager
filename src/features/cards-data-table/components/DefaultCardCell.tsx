@@ -4,7 +4,7 @@ export const DefaultCardCell = () => {
 			<img
 				alt="Selected"
 				className="w-4 h-4"
-				src="/src/assets/images/png/check.png"
+				src="/src/assets/icons/check.png"
 			/>
 			Default
 		</div>

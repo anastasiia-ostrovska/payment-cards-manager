@@ -1,8 +1,8 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import type { Brand, PaymentBrands, PaymentCard } from "@/common/types";
-import VisaImg from "@/assets/images/png/visa.png";
-import MastercardImg from "@/assets/images/png/mastercard.png";
-import AmexImg from "@/assets/images/png/amex.png";
+import VisaImg from "@/assets/icons/visa.png";
+import MastercardImg from "@/assets/icons/mastercard.png";
+import AmexImg from "@/assets/icons/amex.png";
 import { BrandImage } from "../components/BrandImage";
 import { DefaultCardCell } from "../components/DefaultCardCell";
 import { DropdownActionsMenu } from "../components/DropdownActionsMenu";

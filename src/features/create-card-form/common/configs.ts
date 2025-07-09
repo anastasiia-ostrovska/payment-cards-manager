@@ -1,6 +1,6 @@
-import VisaImg from "@/assets/images/png/visa.png";
-import MastercardImg from "@/assets/images/png/mastercard.png";
-import AmexImg from "@/assets/images/png/amex.png";
+import VisaImg from "@/assets/icons/visa.png";
+import MastercardImg from "@/assets/icons/mastercard.png";
+import AmexImg from "@/assets/icons/amex.png";
 import type { BrandOptions, CreateCardInputs } from "../common/types";
 
 // Form Schema Configs
