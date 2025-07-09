@@ -24,10 +24,6 @@ export const useCards = () => {
 		};
 	}, []);
 
-	const handleDeleteCard: CardsTableActionHandler = (id) => {
-		setCards((previousCards) => previousCards.filter((card) => card.id !== id));
-	};
-
 	const handleSetDefaultCard: CardsTableActionHandler = (id) => {
 		setCards((previousCards) =>
 			previousCards.map((card) => ({
@@ -35,6 +31,26 @@ export const useCards = () => {
 				isDefault: card.id === id,
 			}))
 		);
+	};
+
+	const handleDeleteCard: CardsTableActionHandler = (id) => {
+		setCards((previousCards) => {
+			let isCurrentDefault = false;
+
+			const updatedCards = previousCards.filter((card) => {
+				if (card.id === id && card.isDefault) isCurrentDefault = true;
+				return card.id !== id;
+			});
+
+			if (isCurrentDefault && updatedCards.length > 0) {
+				return updatedCards.map((card, index) => ({
+					...card,
+					isDefault: index === 0,
+				}));
+			}
+
+			return updatedCards;
+		});
 	};
 
 	const handleAddCard: AddCardHandler = ({ brand, last4 }) => {
