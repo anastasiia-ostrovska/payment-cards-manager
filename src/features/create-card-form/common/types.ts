@@ -15,7 +15,7 @@ export type CreateCardInput = {
 	label: string;
 	name: CreateCardInputFieldName;
 	placeholder: string;
-	type?: string;
+	mask?: string;
 };
 
 export type CreateCardInputs = Record<

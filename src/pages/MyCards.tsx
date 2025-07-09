@@ -4,7 +4,7 @@ import {
 	CreateCardForm,
 	CreateCardSubmitButton,
 } from "@/features/create-card-form";
-import { ModeToggler } from "@/features/mode-moggler";
+import { ModeToggler } from "@/features/mode-toggler";
 
 export const MyCards = () => {
 	const { columns, data, isLoading, handleAddCard } = useCardsTableData();
